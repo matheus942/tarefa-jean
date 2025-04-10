@@ -16,14 +16,14 @@ div{
     left: 50%;
     transform: translate(-50%,-50%);
     padding: 80px;
-    border-radius: 10px;
+    border-radius: 50px;
     color: rgb(255, 255, 255);
 }
 input{
-    padding: 15px;
+    padding: 10px;
     border: none;
     outline: none;
-    font-size: 15px;
+    font-size: 25px;
 }
 button{
     background-color: rgb(27, 24, 226);
@@ -49,7 +49,7 @@ button:hover{
    <br><br>
    <button>entrar</button>
       <br><br>
-     <a href="file:///C:/Users/matheus.1935/Documents/tarefa%20jean/tarefa-jean/recupera%C3%A7%C3%A3o%20de%20senha/recupera%C3%A7%C3%A3o-de-senha.html#" class="recuperação-de-senha.html">Voltar ao Login</a>
+     <a href='file:///C:/Users/matheus.1935/Documents/tarefa%20jean/tarefa-jean/recupera%C3%A7%C3%A3o%20de%20senha/recupera%C3%A7%C3%A3o-de-senha.php#' class="recuperação-de-senha.php">Ir para pagina de recuperaçaõ de senha</a>
 
     </div>
 

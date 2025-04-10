@@ -161,7 +161,7 @@
         </div>
         <br><br>
         
-        <a href="file:///C:/Users/matheus.1935/Documents/tarefa%20jean/tarefa-jean/login/login.html" class="login.html">Voltar ao Login</a>
+        <a href='file:///C:/Users/matheus.1935/Documents/tarefa%20jean/tarefa-jean/login/login.php' class="login.php">Voltar ao Login</a>
     </div>
 
    
