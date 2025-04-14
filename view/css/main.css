@@ -19,7 +19,7 @@ body {
 
 .form {
     background: #ffffff;
-    border: 2px solid #1a01fa; /* Adicionada borda azul */
+    border: 2px solid #1a01fa;
     border-radius: 10px;
     padding: 40px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
