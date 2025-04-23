@@ -51,9 +51,9 @@
         <h1>login</h1>
         <input type="text" placeholder="nome">
         <br><br>
-        <input type="number" placeholder="senha">
+        <input id="senha" name="senha" placeholder="password" type="password">
         <br><br>
-        <button>entrar</button>
+        <button type="submit">entrar</button>
         <br><br>
         <a href='file:///C:/Users/matheus.1935/Documents/tarefa%20jean/tarefa-jean/recupera%C3%A7%C3%A3o%20de%20senha/recupera%C3%A7%C3%A3o-de-senha.php#' class="recuperação-de-senha.php">Ir para pagina de recuperaçaõ de senha</a>
 

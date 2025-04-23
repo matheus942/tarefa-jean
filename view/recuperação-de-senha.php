@@ -15,7 +15,7 @@
             width: 100%;
             height: 100vh;
             font-family: Arial, Helvetica, sans-serif;
-            background: linear-gradient(-45deg, #1a01fa, #ffffff, #eeff04);
+            background: linear-gradient(-45deg,rgb(0, 0, 0), #ffffff, #eeff04);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -65,7 +65,7 @@
         .input input {
             width: 100%;
             padding: 12px 15px 12px 45px;
-            border: 2px solid #ffffff;
+            border: 2px solidrgb(0, 0, 0);
             border-radius: 22px;
             outline: none;
             font-family: inherit;
