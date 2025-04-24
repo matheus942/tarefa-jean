@@ -108,21 +108,18 @@ body {
                 <h2 class="title">cadastrar</h2>
                 <label for="fullname">fullname</label>
                 <div class="input">
-                    <input id="fullname" name="fulname" placeholder="fullname" type="text">
+                    <input id="fullname" name="fullname" placeholder="fullname" type="text">
                 </div>
                 <label for="username">name</label>
                 <div class="input">
-                    <i class="fa fa-ufser-cicle-o" aria-hidden="true"></i>
                     <input id="username" name="username" placeholder="username" type="text">
                 </div>
                 <label for="Email">Email</label>
                 <div class="input">
-                    <i class="far fa-envelope"></i>
                     <input id="Email" name="Email" placeholder="Email" type="text">
                 </div>
-                <label for="senha">senha</label>
+                <label for="password">password</label>
                 <div class="input">
-                    <i class="fas fa-lock"></i>
                     <input id="senha" name="senha" placeholder="password" type="password">
                 </div>
                 <div id="btn">

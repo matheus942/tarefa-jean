@@ -22,8 +22,8 @@ private function connection()
     try{
         $conn = new PDO("mysql:host=$this->servername;dbname=this->username, $this->password");
         return $conn;
-    } catch (PDOException $e) {
-        die("connection failed: " . $e->getMessage);
+    } catch(PDOException $e) {
+      die("connection failed:" . $e->getMessage());
     }
 }
 }

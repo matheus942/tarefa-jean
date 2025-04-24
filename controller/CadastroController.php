@@ -1,21 +1,21 @@
 <?php
 
-require '../model/CadastroModel.php';
+require '../model/cadastroModel.php';
 
-if ($_POST){
-         $fullName = $_POST['fullName'];
-         $userName = $_POST['userName'];
-         $Email = $_POST['Email'];
-         $senha = $_POST['senha'];
+if ($_POST) {
+    
+    $fullName = $_POST['fullname'];
+    $username = $_POST['username'] ;
+    $Email = $_POST['Email'];
+    $senha = $_POST['senha'];
 
+    $result = register($fullName, $username, $Email, $senha);
 
-$result = register($fullName, $Email, $userName, $password);
+    echo $result;
 
-echo $result;
-
-if($result){
-   echo "Cadsatro realizado com sucesso! ";
-}else{
-    echo "Não foi possivel realizar o cadastro.";
-}
+    if ($result) {
+        echo ("Cadastro realizado com sucesso!");
+    } else {
+        echo ("Não foi possível realizar o cadastro.");
+    }
 }
