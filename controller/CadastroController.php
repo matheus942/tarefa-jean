@@ -4,12 +4,12 @@ require '../model/cadastroModel.php';
 
 if ($_POST) {
     
-    $fullName = $_POST['fullname'];
-    $username = $_POST['username'] ;
-    $Email = $_POST['Email'];
+    $fullName = $_POST['fullName'];
+    $username = $_POST['userName'] ;
+    $email = $_POST['email'];
     $senha = $_POST['senha'];
 
-    $result = register($fullName, $username, $Email, $senha);
+    $result = register($fullName, $username, $email, $senha);
 
     echo $result;
 

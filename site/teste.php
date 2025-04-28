@@ -21,6 +21,15 @@
    <h1>Bem vindo au site</h1>
 </body>
 </html>
+<?php
+<?php
+require_once 'http://localhost/tarefa-jean/service/conexao.php.php'; // Substitua com o caminho correto
+
+$pdo = (new usePDO())->getInstance();
+
+if ($pdo) {
+    echo "Conexão com o banco de dados foi realizada com sucesso!";
+}
 
 
 

@@ -14,29 +14,29 @@
 }
 
 body {
-    width: 100%;
-    height: 100vh;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #1a01fa;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    border: #000000;
-    border-radius: 50%;
-}
+            width: 100%;
+            height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #1a01fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            border: #000000;
+            border-radius: 50%;
+        }
 
 .form {
-    background: #ffffff;
-    border: 2px solid #1a01fa;
-    border-radius: 10px;
-    padding: 40px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 100px;
-    text-align: center;
-    color: black;
-}
+            background: #ffffff;
+            border: 2px solid #1a01fa;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px; /* Corrigido para que o formulário tenha um tamanho adequado */
+            text-align: center;
+            color: black;
+        }
 
 .title {
     font-size: 1.5em;
@@ -114,9 +114,9 @@ body {
                 <div class="input">
                     <input id="userName" name="userName" placeholder="userName" type="text">
                 </div>
-                <label for="Email">Email</label>
+                <label for="email">email</label>
                 <div class="input">
-                    <input id="Email" name="Email" placeholder="Email" type="text">
+                    <input id="email" name="email" placeholder="email" type="email">
                 </div>
                 <label for="password">password</label>
                 <div class="input">

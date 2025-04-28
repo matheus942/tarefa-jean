@@ -52,14 +52,17 @@
      <h2>login</h2>
 
         <div id="form">
-        <form medthod="post" action="loginController.php" >
+        <form medthod="post" action="loginController.php">
+
             <label for="username">name</label>
+            <br><br>
                     <input id="username" name="username" placeholder="username" type="text">
                     <br><br>
-            <label for="password">password</label>
+              <label for="password">password</label>
+              <br>
                     <input id="senha" name="senha" placeholder="password" type="password">
                     <br><br>
-            <button type="submit" http="http://localhost/tarefa-jean/site/site.php">entrar</button>
+            <button type="submit" href="http://localhost/tarefa-jean/teste/teste.php">entrar</button>
             <br><br>
             <a href='http://localhost/tarefa-jean/view/recupera%c3%a7%c3%a3o-de-senha.php' class="recuperação-de-senha.php">Ir para pagina de recuperaçaõ de senha</a>
             </form>
@@ -78,7 +81,7 @@
                     successMessage.style.display = ' login feito';
                     errorMessage.style.display = 'Email errado';
                 } else {
-                    errorMessage.style.display = '';
+                    errorMessage.style.display = 'block';
                     successMessage.style.display = 'none';
                 }
             }
