@@ -2,7 +2,7 @@
 
 require '../service/conexao.php';
 
-function register($fullName, $username, $email, $senha){
+function register($fullName, $userName, $Email, $senha){
     
     
          $conn = new usePDO;
@@ -11,17 +11,17 @@ function register($fullName, $username, $email, $senha){
          
 
          //cadastro de pessoa
-         $sql = "INSERT INTO users (full_name, email) VALUES (?, ?)";
+         $sql = "INSERT INTO pessoa (full_name, email) VALUES (?, ?)";
          $stmt = $instance->prepare($sql);
-         $stmt->execute([$fullName, $email, $username, $hashed_password]);
+         $stmt->execute([$fullName, $Email, $userName, $hashed_password]);
          
          //criptografia da senha
          $hashed_password = pasword_hash($password, password_DEFAULT);
 
         //cadastro de usuario
          $idPessoa = $stmt->lastinsertId();
-         $sql = "INSERT INTO users (full_name, email) VALUES (?, ?)";
+         $sql = "INSERT INTO usuario (full_name, email) VALUES (?, ?)";
          $stmt = $instance->prepare($sql);
-         $stmt->execute([$fullName, $email, $username, $hashed_password]);
+         $stmt->execute([$fullName, $Email, $userName, $hashed_password]);
          return $idPessoa;
 }

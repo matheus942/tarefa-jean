@@ -106,13 +106,13 @@ body {
         <div id="form">
             <form action="../controller/CadastroController.php" method="post">
                 <h2 class="title">cadastrar</h2>
-                <label for="fullname">fullname</label>
+                <label for="fullName">fullName</label>
                 <div class="input">
-                    <input id="fullname" name="fullname" placeholder="fullname" type="text">
+                    <input id="fullName" name="fullName" placeholder="fullName" type="text">
                 </div>
-                <label for="username">name</label>
+                <label for="userName">name</label>
                 <div class="input">
-                    <input id="username" name="username" placeholder="username" type="text">
+                    <input id="userName" name="userName" placeholder="userName" type="text">
                 </div>
                 <label for="Email">Email</label>
                 <div class="input">

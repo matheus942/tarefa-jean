@@ -5,7 +5,7 @@ class usePDO
     private $servername = "localhost";
     private $username = "root";
     private $password = "";
-    private $dbname = "login";
+    private $dbname = "login2";
     private $instance;
 
  
