@@ -1,19 +1,23 @@
 <?php
-// Arquivo de conexão com o banco de dados
-    require  '../model/loginModel.php' 
-// Configurações do banco de dados
-$servidor = "localhost";
-$usuario = "root";
-$senha = "";
-$banco = "email";
+session_start();
 
-// Criar conexão
-$conexao = new mysqli($servidor, $usuario, $senha, $banco);
+// Dados simulados (você pode trocar por consulta ao banco)
+$usuarioCorreto = 'matheus';
+$senhaCorreta = 'Ma20109';
 
-// Verificar conexão
-if ($conexao->connect_error) {
-    die("Falha na conexão: " . $conexao->connect_error);
- }
+// Recebe os dados
+$username = $_POST['username'] ?? '';
+$senha = $_POST['senha'] ?? '';
 
-// Definir charset para UTF-8
-$conexao->set_charset("utf8");
+// Verifica login
+if ($username === $usuarioCorreto && $senha === $senhaCorreta) {
+    $_SESSION['mensagem'] = "Login feito com sucesso!";
+    $_SESSION['tipo_mensagem'] = "sucesso";
+    header("Location: dashboard.php");
+    exit;
+} else {
+    $_SESSION['mensagem'] = "Usuário ou senha incorretos.";
+    $_SESSION['tipo_mensagem'] = "erro";
+    header("Location: login.php");
+    exit;
+}

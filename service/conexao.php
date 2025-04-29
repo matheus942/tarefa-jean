@@ -1,6 +1,6 @@
 <?php
 
-class usePDO
+class Conexao
 {
     private $servername = "localhost";
     private $username = "root";  // Defina seu usuário aqui (o padrão é 'root')
@@ -28,3 +28,4 @@ class usePDO
         }
     }
 }
+?>

@@ -17,9 +17,9 @@ function register($fullName, $username, $email, $senha) {
         $idUsuario = $stmt->lastInsertId();
 
         // Se você também estiver inserindo dados na tabela 'pessoa', você pode adicionar aqui:
-        // $sql2 = "INSERT INTO pessoa (full_name, email) VALUES (?, ?)";
-        // $stmt2 = $instance->prepare($sql2);
-        // $stmt2->execute([$fullName, $email]);
+         $sql2 = "INSERT INTO pessoa (full_name, email) VALUES (?, ?)";
+         $stmt2 = $instance->prepare($sql2);
+         $stmt2->execute([$fullName, $email]);
 
         return $idUsuario; // Retorna o ID do novo usuário inserido
     } catch (PDOException $e) {
