@@ -5,36 +5,38 @@ session_start(); // Inicia a sessão
 function setMessageAndRedirect($message, $messageType, $redirectPage) {
     $_SESSION['message'] = $message;
     $_SESSION['message_type'] = $messageType; // Pode ser 'success' ou 'error'
-    header("Location: $redirectPage"); // Redireciona para a página de login
+    header("Location: $redirectPage"); // Redireciona para a mesma página
     exit();
 }
 
-// Simulando a validação do banco de dados (substitua com a conexão real ao banco)
+// Simulando o banco de dados com um array de usuários
 $usuarios = [
     'usuario@example.com' => [
-        'senha' => password_hash('123456', PASSWORD_BCRYPT)
+        'nome' => 'João Silva'
     ]
 ];
 
 // Verifica se o formulário foi enviado
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['recuperar'])) {
     $email = $_POST['email'];
-    $senha = $_POST['senha'];
 
-    // Verifica se o email está cadastrado
+    // Verifica se o e-mail está cadastrado
     if (isset($usuarios[$email])) {
-        // Verifica se a senha está correta
-        if (password_verify($senha, $usuarios[$email]['senha'])) {
-            // Se a senha estiver correta, redireciona para a página inicial
-            $_SESSION['user_email'] = $email;
-            setMessageAndRedirect('Login realizado com sucesso!', 'success', 'pagina_inicial.php');
-        } else {
-            // Se a senha estiver incorreta
-            setMessageAndRedirect('Senha incorreta.', 'error', 'login.php');
-        }
+        // Gera um código aleatório
+        $codigo_recuperacao = rand(100000, 999999);
+
+        // Simula salvar o código no banco de dados
+        $_SESSION['codigo_recuperacao'] = $codigo_recuperacao;
+        $_SESSION['email_recuperacao'] = $email;
+
+        // Simula o envio do código para o e-mail (não será realmente enviado, apenas mostrado)
+        // Aqui você pode usar a função mail() do PHP para enviar o código real para o e-mail
+
+        // Exibe uma mensagem de sucesso
+        setMessageAndRedirect("O código de recuperação foi enviado para seu e-mail.", "success", "recuperar_senha.php");
     } else {
-        // Se o email não estiver registrado
-        setMessageAndRedirect('Email não cadastrado.', 'error', 'login.php');
+        // Caso o e-mail não esteja cadastrado
+        setMessageAndRedirect("Este e-mail não está cadastrado. Verifique e tente novamente.", "error", "recuperar_senha.php");
     }
 }
 ?>
@@ -44,9 +46,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="login.css"> <!-- Referência ao arquivo CSS -->
-    <style>
+    <title>Recuperação de Senha</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>/* Resetando alguns estilos padrão */
 * {
     margin: 0;
     padding: 0;
@@ -62,8 +64,8 @@ body {
     height: 100vh;
 }
 
-/* Container do formulário de login */
-.login-container {
+/* Container do formulário de recuperação */
+.recuperar-container {
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
@@ -107,7 +109,7 @@ h2 {
     background-color: #fff;
 }
 
-/* Botão de login */
+/* Botão de enviar código */
 button {
     width: 100%;
     padding: 10px;
@@ -156,8 +158,8 @@ button:hover {
 </style>
 </head>
 <body>
-    <div class="login-container">
-        <h2>Login</h2>
+    <div class="recuperar-container">
+        <h2>Recuperar Senha</h2>
 
         <!-- Exibir mensagens de sucesso ou erro -->
         <?php if (isset($_SESSION['message'])): ?>
@@ -167,20 +169,16 @@ button:hover {
             <?php unset($_SESSION['message'], $_SESSION['message_type']); ?>
         <?php endif; ?>
 
-        <form action="login.php" method="POST">
+        <form action="recuperar_senha.php" method="POST">
             <div class="input-group">
                 <label for="email">E-mail</label>
                 <input type="email" id="email" name="email" required placeholder="Digite seu e-mail">
             </div>
-            <div class="input-group">
-                <label for="senha">Senha</label>
-                <input type="password" id="senha" name="senha" required placeholder="Digite sua senha">
-            </div>
-            <button type="submit" name="login">Entrar</button>
+            <button type="submit" name="recuperar">Enviar Código</button>
         </form>
 
         <div class="links">
-            <a href="recuperar_senha.php">Esqueceu a senha?</a>
+            <a href="login.php">Já tem uma conta? Faça login.</a>
         </div>
     </div>
 </body>
