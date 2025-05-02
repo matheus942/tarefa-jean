@@ -4,7 +4,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Cadastro</title>
+    <title>Cadastro de Usuário</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,6 +13,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+            margin: 0;
         }
 
         .container {
@@ -82,7 +83,7 @@
 <div class="container">
     <h2>Cadastro de Usuário</h2>
 
-    <!-- Exibe a mensagem de sucesso ou erro -->
+    <!-- Exibe mensagens de erro ou sucesso -->
     <?php if (isset($_SESSION['mensagem'])): ?>
         <div class="mensagem <?= $_SESSION['tipo']; ?>">
             <?= $_SESSION['mensagem']; ?>
@@ -90,11 +91,10 @@
         <?php unset($_SESSION['mensagem'], $_SESSION['tipo']); ?>
     <?php endif; ?>
 
-    <!-- Formulário de cadastro -->
+    <!-- Formulário de Cadastro -->
     <form action="/tarefa-jean/controller/cadastroController.php" method="POST">
-
-    <label for="userName">Nome de Usuário:</label>
-    <input type="text" name="userName" id="userName" required>
+        <label for="userName">Nome de Usuário:</label>
+        <input type="text" name="userName" id="userName" required>
 
         <label for="email">E-mail:</label>
         <input type="email" name="email" id="email" required>
@@ -105,7 +105,7 @@
         <label for="confirmar">Confirmar Senha:</label>
         <input type="password" name="confirmar" id="confirmar" required>
 
-        <button type="submit" name="cadastrar">Cadastrar</button>
+        <button type="submit" name="cadastrar" src="http://localhost/tarefa-jean/view/login.php">Cadastrar</button>
     </form>
 </div>
 </body>

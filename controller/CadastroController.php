@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-// Caminho correto para o model
+
 require_once('../model/cadastroModel.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
