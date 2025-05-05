@@ -1,157 +1,100 @@
-<?php
-session_start(); // Inicia a sessão
-
-// Função para redirecionar com mensagem
-function setMessageAndRedirect($message, $messageType, $redirectPage) {
-    $_SESSION['message'] = $message;
-    $_SESSION['message_type'] = $messageType; // Pode ser 'success' ou 'error'
-    header("Location: $redirectPage"); // Redireciona para a página de login
-    exit();
-}
-
-// Simulando a validação do banco de dados (substitua com a conexão real ao banco)
-$usuarios = [
-    'usuario@example.com' => [
-        'senha' => password_hash('123456', PASSWORD_BCRYPT)
-    ]
-];
-
-// Verifica se o formulário foi enviado
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
-    $email = $_POST['email'];
-    $senha = $_POST['senha'];
-
-    // Verifica se o email está cadastrado
-    if (isset($usuarios[$email])) {
-        // Verifica se a senha está correta
-        if (password_verify($senha, $usuarios[$email]['senha'])) {
-            // Se a senha estiver correta, redireciona para a página inicial
-            $_SESSION['user_email'] = $email;
-            setMessageAndRedirect('Login realizado com sucesso!', 'success', 'pagina_inicial.php');
-        } else {
-            // Se a senha estiver incorreta
-            setMessageAndRedirect('Senha incorreta.', 'error', 'login.php');
-        }
-    } else {
-        // Se o email não estiver registrado
-        setMessageAndRedirect('Email não cadastrado.', 'error', 'login.php');
-    }
-}
-?>
-
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="login.css"> <!-- Referência ao arquivo CSS -->
-    <style>
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>/* Reset básico de margens e paddings */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Corpo da página */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    background-color: #f4f4f9;
+    color: #333;
+    padding: 20px;
+    text-align: center;
 }
 
-/* Container do formulário de login */
-.login-container {
-    background-color: #fff;
+/* Container geral */
+.container {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
     padding: 20px;
+    background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
-    text-align: center;
 }
 
 /* Título */
 h2 {
+    color: #4CAF50;
     margin-bottom: 20px;
-    font-size: 24px;
-    color: #333;
 }
 
-/* Estilo dos campos de input */
-.input-group {
-    margin-bottom: 15px;
-    text-align: left;
+/* Formulário */
+form {
+    display: flex;
+    flex-direction: column;
 }
 
-.input-group label {
-    display: block;
-    font-size: 14px;
-    margin-bottom: 5px;
-    color: #555;
-}
-
-.input-group input {
-    width: 100%;
+/* Inputs */
+input[type="email"],
+input[type="password"],
+input[type="text"] {
     padding: 10px;
-    font-size: 14px;
+    margin: 10px 0;
     border: 1px solid #ccc;
     border-radius: 4px;
-    background-color: #f9f9f9;
+    font-size: 16px;
 }
 
-.input-group input:focus {
-    border-color: #66afe9;
-    background-color: #fff;
-}
-
-/* Botão de login */
+/* Botões */
 button {
-    width: 100%;
-    padding: 10px;
     background-color: #4CAF50;
-    color: #fff;
+    color: white;
+    padding: 10px;
     border: none;
     border-radius: 4px;
     font-size: 16px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
     background-color: #45a049;
 }
 
-/* Estilo para mensagens */
-.message {
-    padding: 10px;
-    margin-bottom: 15px;
-    border-radius: 5px;
-}
-
-.message.success {
-    background-color: #dff0d8;
-    color: #3c763d;
-}
-
-.message.error {
-    background-color: #f2dede;
-    color: #a94442;
-}
-
 /* Links */
-.links {
+a {
+    color: #4CAF50;
+    text-decoration: none;
     margin-top: 10px;
 }
 
-.links a {
-    color: #007bff;
-    text-decoration: none;
+a:hover {
+    text-decoration: underline;
 }
 
-.links a:hover {
-    text-decoration: underline;
+/* Mensagens de erro e sucesso */
+p {
+    font-size: 16px;
+    margin: 20px 0;
+}
+
+p.sucesso {
+    color: green;
+}
+
+p.erro {
+    color: red;
 }
 </style>
 </head>
@@ -159,7 +102,7 @@ button:hover {
     <div class="login-container">
         <h2>Login</h2>
 
-        <!-- Exibir mensagens de sucesso ou erro -->
+
         <?php if (isset($_SESSION['message'])): ?>
             <div class="message <?php echo $_SESSION['message_type']; ?>">
                 <?php echo $_SESSION['message']; ?>
@@ -167,7 +110,7 @@ button:hover {
             <?php unset($_SESSION['message'], $_SESSION['message_type']); ?>
         <?php endif; ?>
 
-        <form action="login.php" method="POST">
+        <form action="../controller/LoginController.php" method="POST">
             <div class="input-group">
                 <label for="email">E-mail</label>
                 <input type="email" id="email" name="email" required placeholder="Digite seu e-mail">
@@ -176,7 +119,7 @@ button:hover {
                 <label for="senha">Senha</label>
                 <input type="password" id="senha" name="senha" required placeholder="Digite sua senha">
             </div>
-            <button type="submit" name="login">Entrar</button>
+            <button type="submit" name="login" href='http://localhost/tarefa-jean/site/pagina%20_inicial.php'>Entrar</button>
         </form>
 
         <div class="links">

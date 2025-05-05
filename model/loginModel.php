@@ -1,11 +1,11 @@
 <?php
-// Arquivo com funções para manipulação de dados
+
 require  '../service/conexao.php';
-// Função para buscar todos os emails
+
 function buscarEmails($conexao) {
     $emails = array();
-    
-    // Query para buscar emails ordenados por data (mais recentes primeiro)
+  
+
     $sql = "SELECT * FROM code";
     $resultado = $conexao->query($sql);
     
@@ -18,9 +18,9 @@ function buscarEmails($conexao) {
     return $emails;
 }
 
-// Função para buscar um email específico pelo ID
+
 function buscarEmailPorId($conexao, $id) {
-    // Query para buscar um email específico
+   
     $sql = "SELECT * FROM code WHERE id = ?";
     $stmt = $conexao->prepare($sql);
     $stmt->bind_param("i", $id);
@@ -34,7 +34,7 @@ function buscarEmailPorId($conexao, $id) {
     return null;
 }
 
-// Função para marcar um email como lido
+
 function marcarComoLido($conexao, $id) {
     $sql = "UPDATE code SET lido = 1 WHERE id = ?";
     $stmt = $conexao->prepare($sql);
@@ -42,7 +42,7 @@ function marcarComoLido($conexao, $id) {
     return $stmt->execute();
 }
 
-// Função para formatar a data
+
 function formatarData($data) {
     $timestamp = strtotime($data);
     return date('d/m/Y', $timestamp);

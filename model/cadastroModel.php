@@ -1,21 +1,36 @@
 <?php
-require_once(__DIR__ . '/../Conexao.php'); // Corrigir o caminho para sua classe de conexão
+require '../service/conexao.php';
 
-class CadastroModel {
-    private $conn;
 
-    public function __construct() {
-        $this->conn = (new Conexao())->getInstance();
-    }
+ register($fullName, $name, $email, $senha, $confirm_password)
+ {
+ register($fullName, $username, $email, $senha, $confirm_password)
+ {
+    
+    
+         $conn = new usePDO ;
+         $instance = $conn->getInstance()
 
-    public function cadastrar($nome, $email, $senha) {
-        $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
+         
 
-        $sql = "INSERT INTO usuarios (nome, email, senha) VALUES (:nome, :email, :senha)";
-        $stmt = $this->conn->prepare($sql);
-        $stmt->bindParam(':nome', $nome);
-        $stmt->bindParam(':email', $email);
-        $stmt->bindParam(':senha', $senhaHash);
-        return $stmt->execute();
-    }
+         //cadastro de pessoa
+         $sql = "INSERT INTO usuario (full_name, email) VALUES (?, ?)";
+         $stmt = $instance->prepare($sql);
+         $stmt->execute([$fullName, $email, $username, $hashed_password]);
+         
+         //criptografia da senha
+         $hashed_password = pasword_hash($password, password_DEFAULT);
+
+
+         $sql = "INSERT INTO users (full_name, email, username, password) VALUES (?, ?, ?, ?)";
+        //cadastro de usuario
+         $idPessoa = $stmt->lastinsertId();
+         $sql = "INSERT INTO pessoa (full_name, email) VALUES (?, ?)";
+         $stmt = $instance->prepare($sql);
+         $stmt->execute([$fullName, $email, $username, $hashed_password]);
+
+         $result = $stmt->rowCount();
+         return $result;
+         return $idPessoa;
+}
 }

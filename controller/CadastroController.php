@@ -1,28 +1,23 @@
+
 <?php
-session_start();
+
+require_once '../model/CadastroModel.php';
+
+if ($_POST){
+         $fullName = $_POST['fullName'];
+         $username = $_POST['username'];
+         $Email = $_POST['Email'];
+         $senha = $_POST['senha'];
+         $confirm_Password = $_POST["confirm_password"] ?? null;
 
 
-require_once('../model/cadastroModel.php');
+$result = register($fullName, $Email, $username, $senha, $confirm_password);
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $userName = $_POST['userName'] ?? '';
-    $email = $_POST['email'] ?? '';
-    $senha = $_POST['senha'] ?? '';
-    $confirmar = $_POST['confirmar'] ?? '';
+echo $result;
 
-    if ($senha !== $confirmar) {
-        $_SESSION['mensagem'] = 'As senhas não coincidem.';
-        $_SESSION['tipo'] = 'erro';
-        header('Location: ../view/cadastro.php');
-        exit;
-    }
-
-    $model = new CadastroModel();
-    $model->cadastrar($userName, $email, $senha);
-
-    $_SESSION['mensagem'] = 'Cadastro realizado com sucesso!';
-    $_SESSION['tipo'] = 'sucesso';
-    header('Location: ../view/cadastro.php');
-    exit;
+if($result){
+   echo "Cadsatro realizado com sucesso! ";
+}else{
+    echo "Não foi possivel realizar o cadastro.";
 }
-?>
+}

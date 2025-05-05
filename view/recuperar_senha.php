@@ -161,7 +161,7 @@ button:hover {
     <div class="recuperar-container">
         <h2>Recuperar Senha</h2>
 
-        <!-- Exibir mensagens de sucesso ou erro -->
+        
         <?php if (isset($_SESSION['message'])): ?>
             <div class="message <?php echo $_SESSION['message_type']; ?>">
                 <?php echo $_SESSION['message']; ?>
