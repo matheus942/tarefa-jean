@@ -1,17 +1,16 @@
 
 <?php
 
-require_once '../model/CadastroModel.php';
+require '../model/CadastroModel.php';
 
 if ($_POST){
-         $fullName = $_POST['fullName'];
          $username = $_POST['username'];
-         $Email = $_POST['Email'];
-         $senha = $_POST['senha'];
-         $confirm_Password = $_POST["confirm_password"] ?? null;
+         $email = $_POST['email'];
+         $telefone = $_POST['telefone'];
+         $password = $_POST['password'];
+         $confirm_password = $_POST["confirm_password"] ?? null;
 
-
-$result = register($fullName, $Email, $username, $senha, $confirm_password);
+$result = register($username, $email, $telefone, $password,  $confirm_password);
 
 echo $result;
 

@@ -1,138 +1,142 @@
-<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="main.css">
-    <title>cadastro</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-* {
+      *{
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    font-family: "poppins", sans-serif;
 }
 
-body {
+body{
+    background: #121212;
     width: 100%;
-    height: 100vh;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #1a01fa;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
-    border: #000000;
-    border-radius: 50%;
 }
 
-.form {
-    background: #ffffff;
-    border: 2px solid #1a01fa; /* Adicionada borda azul */
-    border-radius: 10px;
-    padding: 40px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 100px;
+.container{
+      background-color: #fafafa;
+      border-radius: 14px;
+      margin: 14px;
+      max-width: 600px;
+      width: 100%;
+      box-sizing: 0.3px 5px rgba(0,0,0,0.5);
+}
+
+.header{
+    background: linear-gradient(120deg, #3acbf0 0%, #8bb0ff 100%);
+    padding: 24px;
     text-align: center;
-    color: black;
+    color: #fff;
 }
 
-.title {
-    font-size: 1.5em;
-    margin-bottom: 20px;
-    font-weight: bold;
+.form{
+    padding: 18px;
+
 }
 
-.input {
+.form-content{
+    margin-bottom: 8px;
+    padding-bottom: 18px;
     position: relative;
-    margin-bottom: 15px;
-    width: 100%;
 }
 
-.input i {
+.form-content label{
+    display: inline-block;
+    margin-bottom: 4px;
+}
+
+.form-content input{
+    display: block;
+    width: 100%;
+    border-radius: 8px;
+    padding: 8px;
+    border: 2px solid #dfdfdf;
+}
+
+.form-content a{
     position: absolute;
-    left: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 1.2em;
-    color: #1a01fa;
+    bottom: -8px;
+    left: 0;
+    visibility: hidden;
 }
 
-.input input {
+.form button{
+    background-color: #00c3ff;
+    color: #fff;
     width: 100%;
-    padding: 12px 15px 12px 45px;
-    border: 2px solid #ffffff;
-    border-radius: 22px;
-    outline: 0;
-    font-family: inherit;
-    font-size: 14px;
-    transition: border-color 0.3s ease;
-}
-
-.input input:focus {
-    border-color: #1a01fa;
-}
-
-#btn {
-    margin-top: 20px;
-}
-
-#btn button {
-    font-family: inherit;
-    background-color: black;
-    width: 100%;
-    height: 45px;
+    border-radius: 14px;
+    padding: 10px;
     border: 0;
-    font-size: 1.2em;
-    color: #ffffff;
-    border-radius: 25px;
+    font-size: 16px;
     cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 14px;
 }
 
-#btn button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 15px rgba(0, 21, 255, 0.2);
+.form-content.error input{
+    border-color: #ff3b25;
 }
 
-#btn button:active {
-    transform: scale(0.95);
-} 
+.form-content.error a{
+    color: #ff3b25;
+}  
     </style>
+   
+
+    <title>Book Club</title>
 </head>
 <body>
-    <div id="form">
-        <form action="../controller/cadastroController.php" method="POST">
-            <h2 class="title">cadastrar
-            </h2>
-            <label for="fullName">nome completo</label>
-            <div class="input">
-                <input id="fullName" name="fullName" placeholder="fullName" type="text">
+    <div class="container">
+        <section class="header">
+            <h2>nova conta</h2>
+        </section>
+
+        <form action="../controller/CadastroController.php" method="POST">
+            <div class="form-content ">
+                <label for="username">nome de usuário</label>
+                <input name="username" type="text" id="username" placeholder="Digite o nome do usuário">
+                <a>seu G-mail ou senha estão errados</a>
             </div>
-            <label for="username">Nome</label>
-            <div class="input">
-                <i class="fa fa-ufser-cicle-o" aria-hidden="true"></i>
-                <input id="username" name="username" placeholder="username" type="text">
+
+            <div class="form-content">
+                <label for="email">email</label>
+                <input name="email" type="email" id="email" placeholder="Digite o seu nome">
+                <a>Aqui vai a mensagem de erro</a>
             </div>
-            <label for="Email">Email</label>
-            <div class="input">
-                <i class="far fa-envelope"></i>
-                <input  id="Email" name="Email" placeholder="Email" type="text">
+
+            <div class="form-content">
+                <label for="telefone">telefone</label>
+                <input name="telefone" type="number" id="telefone" placeholder="Digite seu telefone">
+                <a>Aqui vai a mensagem de erro</a>
+            </div> 
+            
+            
+            <div class="form-content">
+                <label for="password">password</label>
+                <input name="password" type="password" id="password" placeholder="Digite a sua senha">
+                <a>Aqui vai a mensagem de erro</a>
             </div>
-            <label for="senha">senha</label>
-            <div class="input">
-                <i class="fas fa-lock"></i>
-                <input id="senha" name="senha" placeholder="password" type="text"> 
-            </div>
-            <label for="Confirmpassword">confirm password</lbel>
-            <div class="input">
-            <input type="password" name="confirm_password">
-            </div>
-            <div id="btn">
-                <button type="submit">cadastrar</button>
-            </div>
+            
+            <div class="form-content error">
+                <label for="confirm_password">confirmação de senha</label>
+                <input name="confirm_password" type="text" id="confirm_password" placeholder="Digite a sua senha novamente">
+                <a>Aqui vai a mensagem de erro</a>
+            </div> 
+            
+            <button type="submit" href="http://localhost/tarefa-jean/view/login.php">cadastrar</button>
         </form>
+        
     </div>
+    <script src="./javascript.js"></script>
 </body>
 </html>

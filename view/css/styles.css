@@ -1,13 +1,4 @@
-<?php session_start(); ?>
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <link href="http://localhost/tarefa-jean/view/login.php">
-    <title>Página Inicial</title>
-</head>
-<style>
-      *{
+*{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -87,11 +78,4 @@ body{
 
 .form-content.error a{
     color: #ff3b25;
-}  
-    </style>
-<body>
-    <h2>Bem-vindo à Página Inicial!</h2>
-    <p>Você está logado como: <?php echo $_SESSION['usuario']; ?></p>
-    <a href="logout.php">Sair</a>
-</body>
-</html>
+}
