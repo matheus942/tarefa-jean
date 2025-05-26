@@ -119,7 +119,7 @@ p.erro {
                 <label for="senha">Senha</label>
                 <input type="password" id="senha" name="senha" required placeholder="Digite sua senha">
             </div>
-            <button type="submit" name="login" href='http://localhost/tarefa-jean/site/pagina%20_inicial.php'>Entrar</button>
+            <button type="submit" name="login" href="..\xampp\htdocs\tarefa-jean\site\pagina _inicial.php">Entrar</button>
         </form>
 
         <div class="links">

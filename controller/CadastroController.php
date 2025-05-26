@@ -15,7 +15,7 @@ $result = register($username, $email, $telefone, $password,  $confirm_password);
 echo $result;
 
 if($result){
-   echo "Cadsatro realizado com sucesso! ";
+   echo "Cadastro realizado com sucesso! ";
 }else{
     echo "Não foi possivel realizar o cadastro.";
 }

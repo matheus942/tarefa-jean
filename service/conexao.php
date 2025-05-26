@@ -2,12 +2,12 @@
  
 class usePDO
 {
-    private $servername = "localhost";
-    private $username = "root";
-    private $password = "";
-    private $dbname = "login2";
+    private $host = 'localhost';
+    private $db = 'login2';
+    private $port = 3306;
+    private $user = 'root';
+    private $pass = '';
     private $instance;
-}
  
 function getInstance()
 {
@@ -20,11 +20,12 @@ function getInstance()
  function connection()
 {
     try{
-        $conn = new PDO("mysql:host=$this->servername;dbname=this->username, $this->password");
+        $conn = new PDO("mysql:host=$this->host;port=$this->port;dbname=$this->db;charset=utf8", $this->user, $this->pass);
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         return $conn;
     } catch (PDOException $e) {
         die("connection failed: " . $e->getMessage);
     }
 }
  
- 
+}

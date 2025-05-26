@@ -1,7 +1,7 @@
 <?php
 require '../service/conexao.php';
 
- function register($userName, $Email, $telefone, $senha, $confirm_password)
+ function register($username, $email, $telefone, $password,  $confirm_password)
  {
 
          $conn = new usePDO();
@@ -9,22 +9,23 @@ require '../service/conexao.php';
 
          
          //cadastro de pessoa
-         $sql = "INSERT INTO pesssoa (name, telefone, email) VALUES (?, ?, ?)";
+         $sql = "INSERT INTO pessoa (nome, telefone, email) VALUES (?, ?, ?)";
          $stmt = $instance->prepare($sql);
-         $stmt->execute([$fullName, $email, ]);
+         $stmt->execute([$username, $telefone, $email]);
          
          //criptografia da senha
-         $hashed_password = pasword_hash($password, password_DEFAULT);
+         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
 
-         $sql = "INSERT INTO users (full_name, email, username, password) VALUES (?, ?, ?, ?)";
+         $sql = "INSERT INTO users (email, username, password) VALUES ( ?, ?, ?)";
         //cadastro de usuario
-         $idPessoa = $stmt->lastinsertId();
-         $sql = "INSERT INTO usuario (name, password) VALUES (?, ?)";
+         $idPessoa = $instance->lastInsertId();
+         $sql = "INSERT INTO usuario (usuario, senha, ID_pessoa) VALUES (?, ?, ?)";
          $stmt = $instance->prepare($sql);
-         $stmt->execute([$fullName, $email, $username, $hashed_password]);
+         $stmt->execute([$username, $hashed_password, $idPessoa]);
 
          $result = $stmt->rowCount();
          return $result;
          return $idPessoa;
 }
+                 

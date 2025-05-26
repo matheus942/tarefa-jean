@@ -18,6 +18,6 @@ if ($username === $usuarioCorreto && $senha === $senhaCorreta) {
 } else {
     $_SESSION['mensagem'] = "Usuário ou senha incorretos.";
     $_SESSION['tipo_mensagem'] = "erro";
-    header("Location: login.php");
+    header("Location: http://localhost/tarefa-jean/site/pagina%20_inicial.php");
     exit;
 }

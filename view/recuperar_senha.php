@@ -12,7 +12,7 @@ function setMessageAndRedirect($message, $messageType, $redirectPage) {
 // Simulando o banco de dados com um array de usuários
 $usuarios = [
     'usuario@example.com' => [
-        'nome' => 'João Silva'
+        'nome' => 'Matheus Vieira'
     ]
 ];
 
@@ -174,7 +174,7 @@ button:hover {
                 <label for="email">E-mail</label>
                 <input type="email" id="email" name="email" required placeholder="Digite seu e-mail">
             </div>
-            <button type="submit" name="recuperar">Enviar Código</button>
+            <button type="submit" name="recuperar" href="http://matheusvasilveira@gmail.comlocalhost/phpmyadmin/index.php?route=/sql&pos=0&db=login2&table=pessoa">Enviar Código</button>
         </form>
 
         <div class="links">

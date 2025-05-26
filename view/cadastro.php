@@ -135,7 +135,10 @@ body{
             
             <button type="submit" href="http://localhost/tarefa-jean/view/login.php">cadastrar</button>
         </form>
-        
+        <div class="links">
+            <a href="login.php">Você já é cadastrado então aperte aqui</a>
+        </div>
+    </div>
     </div>
     <script src="./javascript.js"></script>
 </body>

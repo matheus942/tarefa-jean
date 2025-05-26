@@ -6,92 +6,9 @@
     <link href="http://localhost/tarefa-jean/view/login.php">
     <title>Página Inicial</title>
 </head>
-<style>
-      *{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: "poppins", sans-serif;
-}
-
-body{
-    background: #121212;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.container{
-      background-color: #fafafa;
-      border-radius: 14px;
-      margin: 14px;
-      max-width: 600px;
-      width: 100%;
-      box-sizing: 0.3px 5px rgba(0,0,0,0.5);
-}
-
-.header{
-    background: linear-gradient(120deg, #3acbf0 0%, #8bb0ff 100%);
-    padding: 24px;
-    text-align: center;
-    color: #fff;
-}
-
-.form{
-    padding: 18px;
-
-}
-
-.form-content{
-    margin-bottom: 8px;
-    padding-bottom: 18px;
-    position: relative;
-}
-
-.form-content label{
-    display: inline-block;
-    margin-bottom: 4px;
-}
-
-.form-content input{
-    display: block;
-    width: 100%;
-    border-radius: 8px;
-    padding: 8px;
-    border: 2px solid #dfdfdf;
-}
-
-.form-content a{
-    position: absolute;
-    bottom: -8px;
-    left: 0;
-    visibility: hidden;
-}
-
-.form button{
-    background-color: #00c3ff;
-    color: #fff;
-    width: 100%;
-    border-radius: 14px;
-    padding: 10px;
-    border: 0;
-    font-size: 16px;
-    cursor: pointer;
-    margin-top: 14px;
-}
-
-.form-content.error input{
-    border-color: #ff3b25;
-}
-
-.form-content.error a{
-    color: #ff3b25;
-}  
-    </style>
 <body>
     <h2>Bem-vindo à Página Inicial!</h2>
-    <p>Você está logado como: <?php echo $_SESSION['usuario']; ?></p>
-    <a href="logout.php">Sair</a>
+    <p>Você está logado como: convidado1337</p>
+    <a href="https://www.google.com/search?q=google&rlz=1C1GCEU_pt-BRBR1158BR1158&oq=goo&gs_lcrp=EgZjaHJvbWUqBwgDEAAYjwIyBggAEEUYOTIGCAEQRRg7MgcIAhAAGI8CMgcIAxAAGI8CMgcIBBAAGI8CMgYIBRBFGDzSAQoxMTI4N2owajE1qAIIsAIB8QXiZmqSUEDz4g&sourceid=chrome&ie=UTF-8">Sair</a>
 </body>
 </html>
