@@ -1,3 +1,4 @@
+
 <?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -110,7 +111,7 @@ p.erro {
             <?php unset($_SESSION['message'], $_SESSION['message_type']); ?>
         <?php endif; ?>
 
-        <form action="../controller/LoginController.php" method="POST">
+        <form action="../controller/AuthController.php" method="POST">
             <div class="input-group">
                 <label for="email">E-mail</label>
                 <input type="email" id="email" name="email" required placeholder="Digite seu e-mail">

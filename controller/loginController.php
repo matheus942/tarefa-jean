@@ -2,8 +2,8 @@
 session_start();
 
 
-$usuarioCorreto = 'matheus';
-$senhaCorreta = 'Ma20109';
+$usuarioCorreto = '??';
+$senhaCorreta = '??';
 
 
 $username = $_POST['username'] ?? '';
@@ -18,6 +18,6 @@ if ($username === $usuarioCorreto && $senha === $senhaCorreta) {
 } else {
     $_SESSION['mensagem'] = "Usuário ou senha incorretos.";
     $_SESSION['tipo_mensagem'] = "erro";
-    header("Location: http://localhost/tarefa-jean/site/pagina%20_inicial.php");
+    header("Location: login.php");
     exit;
 }

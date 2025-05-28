@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-      *{
+   *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -89,10 +89,8 @@ body{
 
 .form-content.error a{
     color: #ff3b25;
-}  
-    </style>
-   
-
+}
+</style>
     <title>Book Club</title>
 </head>
 <body>
@@ -116,7 +114,7 @@ body{
 
             <div class="form-content">
                 <label for="telefone">telefone</label>
-                <input name="telefone" type="number" id="telefone" placeholder="Digite seu telefone">
+                <input name="telefone" type="password" id="telefone" placeholder="Digite seu telefone">
                 <a>Aqui vai a mensagem de erro</a>
             </div> 
             
