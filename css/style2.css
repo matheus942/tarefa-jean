@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style2.css">
-    <title>login</title>
-</head>
-<style>
-    @import url('https://fonts.googlepis.com/css2?family=Noto+Sans:width@400;700&disply=swap');
+@import url('https://fonts.googlepis.com/css2?family=Noto+Sans:width@400;700&disply=swap');
 
 body {
     margin: 0;
@@ -150,28 +141,3 @@ body * {
         width: 90;
     }
 }
-</style>
-<body>
-     <form action="../controller/LoginController.php" method="POST">
-    <div class="main-login">
-         <div class="left-login">
-             <h1>Faça login<br>E entre no nosso site</h1>
-             <img src="http://localhost/tarefa-jean/img.png/img.png" class="left-login-image" alt="logo book">
-             </div>
-           <div class="right-login">
-               <div class="card-login">
-                   <h1>LOGIN</h1>
-                   <div class="textfield">
-                       <label for="usuario">usuario</label>
-                       <input type="text" name="usuario" placeholder="Usuário">
-                   </div>
-                    <div class="textfield">
-                       <label for="senha">senha</label>
-                       <input type="text" name="senha" placeholder="Senha">
-                    </div> 
-                    <button class="btn-login" href="http://localhost/tarefa-jean/site/pagina%20_inicial.php">login</button> 
-              </div>
-           </div>
-        </div>
-</body>
-</html> 

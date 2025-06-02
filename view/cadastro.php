@@ -75,12 +75,12 @@ body{
     background-color: #00c3ff;
     color: #fff;
     width: 100%;
-    border-radius: 14px;
-    padding: 10px;
-    border: 0;
-    font-size: 16px;
+    border-radius: 20px;
+    padding: 20px;
+    border: 20px;
+    font-size: 20px;
     cursor: pointer;
-    margin-top: 14px;
+    margin-top: 20px;
 }
 
 .form-content.error input{
@@ -114,7 +114,7 @@ body{
 
             <div class="form-content">
                 <label for="telefone">telefone</label>
-                <input name="telefone" type="password" id="telefone" placeholder="Digite seu telefone">
+                <input name="telefone" type="nunber" id="telefone" placeholder="Digite seu telefone">
                 <a>Aqui vai a mensagem de erro</a>
             </div> 
             
