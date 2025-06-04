@@ -18,6 +18,13 @@ body * {
     box-sizing: border-box;
 }
 
+.img{
+   width: 300px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
 .main-login{
     width: 100vw;
     height: 100vh;
@@ -156,7 +163,8 @@ body * {
     <div class="main-login">
          <div class="left-login">
              <h1>Faça login<br>E entre no nosso site</h1>
-             <img src="http://localhost/tarefa-jean/img.png/img.png" class="left-login-image" alt="logo book">
+             <img src="http://localhost/tarefa-jean/img.png/img.png" alt="club book">
+
              </div>
            <div class="right-login">
                <div class="card-login">
